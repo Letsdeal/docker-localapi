@@ -4,7 +4,8 @@ RUN apt-get update && apt-get install -y \
     git \
  && rm -rf /var/lib/apt/lists/*
 
-RUN npm install -g localapi@1.6.0
+RUN npm install -g localapi@1.6.0 \
+ && npm cache clean
 
 RUN mkdir -p /data
 VOLUME /data
