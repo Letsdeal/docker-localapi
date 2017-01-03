@@ -1,12 +1,10 @@
-FROM node:slim
+FROM node:6.9.2
 
 RUN apt-get update && apt-get install -y \
     git \
-  && rm -rf /var/lib/apt/lists/*
+ && rm -rf /var/lib/apt/lists/*
 
-ENV LOCALAPI_VERSION 1.6.0
-
-RUN npm install --global "localapi@${LOCALAPI_VERSION}"
+RUN npm install -g localapi@1.6.0
 
 RUN mkdir -p /data
 VOLUME /data
