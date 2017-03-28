@@ -1,8 +1,6 @@
-FROM node:6.9.2
+FROM node:7-alpine
 
-RUN apt-get update && apt-get install -y \
-    git \
- && rm -rf /var/lib/apt/lists/*
+RUN apk add --no-cache git
 
 RUN npm install -g localapi@1.6.0 \
  && npm cache clean
